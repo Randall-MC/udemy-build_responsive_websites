@@ -6,7 +6,7 @@
 
 .container {
   width: 825px;
-  margin: 20px auto 0;
+  margin: 20px auto;
 }
 
 body {
@@ -23,24 +23,34 @@ body {
   padding: 5px 15px;
   text-decoration: none;
   margin-bottom: 30px;
-  border: 1px solid #000;
-  transition: border 0.4s;
+  border: 2px solid #000;
+  transition: border 0.6s ease;
 }
 
 .back-button:hover,
 .back-button:active {
-  border: 1px solid #fff;
+  border: 2px solid #ad1616;
 }
 
-.back-button::first-letter {
-  /* font-size: 20px; */
+/* .back-button::first-letter {
   margin-right: 5px;
   font-size: 18px;
+  color: #f7f7f7;
+  transition: color 1s ease;
 }
 
 .back-button:hover::first-letter {
   color: #ff0d0d;
   font-weight: bolder;
+} */
+
+.arrow {
+  color: #f7f7f7; /* Color inicial */
+  transition: color 0.6s ease; /* Transición aplicada correctamente */
+}
+
+.back-button:hover .arrow {
+  color: #ff0d0d; /* Cambio de color al hacer hover */
 }
 
 /* Product */
@@ -70,9 +80,42 @@ body {
   padding: 7px 15px;
   letter-spacing: 2px;
 }
+
+.product-img {
+  float: left;
+  height: 250px; /* Fix white space */
+  margin-right: 40px;
+}
+
+.product-img img {
+  width: 250px;
+}
+
 /* Product Information */
+.product-info {
+  /* (total width - borders(left - right) - img - gaps) / 2 */
+  /* (825 - 8 - 250 - (40 + 40)) / 2 */
+  /* 243.5 */
+  width: 243px;
+
+  float: left;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
+.product-total {
+  margin-bottom: 10px;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
 .product-price {
   font-size: 24px;
+  float: left;
 }
 
 .product-shipping {
@@ -80,12 +123,16 @@ body {
   color: #777;
   font-size: 12px;
   font-weight: bold;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+
+  float: right;
+  margin-top: 8px;
 }
 
 .product-text {
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-bottom: 10px;
+  /* clear: both; */
 }
 /* Link */
 .more-info:link,
@@ -102,7 +149,7 @@ body {
 
 /* Product color */
 .product-color {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .color-item {
@@ -129,6 +176,12 @@ body {
 }
 
 /* Product Details */
+.product-details {
+  width: 243px;
+  float: left;
+  margin-top: 20px;
+}
+
 .details-title {
   text-transform: uppercase;
   font-size: 16px;
